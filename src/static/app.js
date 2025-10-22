@@ -130,6 +130,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Accessibility: Close modal on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+      closeModal();
+    }
+  });
   // Handle form submission
   signupForm.addEventListener("submit", async (event) => {
     event.preventDefault();
